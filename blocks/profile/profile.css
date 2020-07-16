@@ -1,0 +1,11 @@
+@import url(../profile/__image/profile__image.css);
+@import url(../profile/__name/profile__name.css);
+@import url(../profile/__title/profile__title.css);
+
+.profile {
+  width: 882px;
+  display: flex;
+  margin: 36.25px auto 100px;
+  margin-bottom: 100px;
+  justify-content: space-between;
+}
