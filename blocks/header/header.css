@@ -1,19 +1,13 @@
+@import url(../header/__logo/header__logo.css);
+
 .header {
   border-bottom: 1px solid rgba(84, 84, 84, .7);
-  height: 90px;
   margin: 45px auto 0;
   width: 70%; 
   justify-self: flex-start;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 831px) {
   .header {
     width: 100%;
   }
-  
-  .logo {
-    width: 126px;
-    height: 24px;
-    margin: 8.5% 0 0 8.4%; 
-  }
-}
