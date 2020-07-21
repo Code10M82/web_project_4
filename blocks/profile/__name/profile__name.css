@@ -2,9 +2,17 @@
   font-weight: 500;
   font-size: 42px;
   line-height: 56px;
-  width: 43%;
   margin: 0;
-  height: 43px;
-  margin-left: 4%;
+  width: 64.87%;
   margin-top: 2.5%;
+}
+
+@media screen and (max-width: 500px) {
+  .profile__name {
+    font-size: 22px;
+    line-height: 56px;
+    margin-right: 5%;
+    margin-left: 15%;
+    
+  }
 }

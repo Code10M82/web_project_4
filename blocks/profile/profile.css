@@ -1,11 +1,23 @@
 @import url(../profile/__image/profile__image.css);
+@import url(../profile/__text-container/profile__text-container.css);
 @import url(../profile/__name/profile__name.css);
 @import url(../profile/__title/profile__title.css);
 
 .profile {
   width: 70%;
   display: flex;
-  margin: 36.25px auto 100px;
-  margin-bottom: 100px;
-  justify-content: space-between;
+  margin: 36.25px auto 0;
+}
+
+@media screen and (max-width: 900px) {
+  .profile {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile {
+    flex-direction: column;
+    margin-bottom: 36px;
+  }
 }

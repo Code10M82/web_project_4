@@ -1,7 +1,15 @@
 .button__add {
   background-color: #000;
-  width: 17%;
+  width: 150px;
   height: 50px;
   border: 2px solid #fff;
   margin-top: 4.5%;
+  /* margin-left: 40%; */
+}
+
+@media screen and (max-width: 500px) {
+  .button__add {
+    width: 282px;
+    margin: 10% auto 0;
+  }
 }

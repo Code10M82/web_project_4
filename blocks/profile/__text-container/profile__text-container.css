@@ -1,0 +1,14 @@
+.profile__text-container {
+  display: flex;
+  flex-direction: column;
+  width: 66.33%;
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .profile__text-container {
+    margin: 0;
+    width: 100%;
+    margin-top: 5%;
+  }
+}

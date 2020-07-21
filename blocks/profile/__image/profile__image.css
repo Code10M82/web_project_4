@@ -1,7 +1,17 @@
 .profile__image {
-  width: 100%;
   border-radius: 50%;
-  width: 13%;
-  height: auto;
-  margin-top: .5%;
+  margin: 0 auto;
+}
+
+.profile__image-container {
+  width: 19.11%;
+  text-align: center;
+  margin-left: -3%;
+
+}
+
+@media screen and (max-width: 500px) {
+  .profile__image {
+    align-self: center;
+  }
 }
