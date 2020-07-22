@@ -4,12 +4,11 @@
   height: 50px;
   border: 2px solid #fff;
   margin-top: 4.5%;
-  /* margin-left: 40%; */
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 831px) {
   .button__add {
-    width: 282px;
-    margin: 10% auto 0;
+    width: 100%;
+    margin: 36px auto 0;
   }
 }

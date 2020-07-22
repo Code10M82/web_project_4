@@ -1,0 +1,11 @@
+.profile__image-container {
+  width: 168.75px;
+  text-align: center;
+  margin-left: -3%;
+}
+
+@media screen and (max-width: 831px) {
+  .profile__image-container {
+    margin: 0;
+  }
+}

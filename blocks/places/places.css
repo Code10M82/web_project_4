@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-@media and screen (max-with: 831px) {
+@media and screen (max-width: 831px) {
   .places {
     width: 90%;
   }

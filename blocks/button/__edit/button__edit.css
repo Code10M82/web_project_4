@@ -5,17 +5,33 @@
   border: 1px solid #fff;
   text-align: center;
   display: inline-block;
-  align-self: flex-end;
-  margin-right: 154px;
-  margin-top: -6%;
+  margin-top: 6.3%;
+  margin-left: 24px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 831px) {
   .button__edit {
    width: 18px;
    height: 18px;
-   margin-right: 5%;
-   margin-top: -13%;
-   /* margin-bottom: 5%; */
+   margin-top: 3%;
+   margin-left: 17.25px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .button__edit {
+    margin-top: 4%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .button__edit {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .button__edit {
+    margin-top: 7%;
   }
 }
