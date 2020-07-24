@@ -1,4 +1,4 @@
-console.log('1234')
+console.log('1234');
 const editButton = document.querySelector('.button__edit');
 const closeButton = document.querySelector('.button__close');
 const modal = document.querySelector('.modal');
@@ -12,12 +12,12 @@ function toggleModal() {
 editButton.addEventListener('click', toggleModal);
 
 closeButton.addEventListener('click', toggleModal);
-
+console.log('grrr');
 saveButton.addEventListener('submit', function(e) {
   
   e.preventDefault();
-  e.stopImmediatePropagation();
-  console.log('grrr');
+  console.log(e);
+  
   
 
   
