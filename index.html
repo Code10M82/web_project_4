@@ -9,12 +9,12 @@
 <body class="body">
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" class="header__logo">
+      <img src="./images/logo.svg" class="header__logo" alt="logo">
     </header>
     <main>
       <section class="profile">
         <div class="profile__image-container">
-          <img class="profile__image" src="./images/jacques.png"></img>
+          <img class="profile__image" src="./images/jacques.png" alt="Jacques Cousteau"></img>
         </div>
         <div class="profile__text-container">
           <h1 class="profile__name">Jacques Cousteau</h1>
@@ -29,56 +29,56 @@
       </section>
       <section class="places">
         <div class="places__card">
-          <img class="places__image" src="./images/yosemite.png"></img>
+          <img class="places__image" src="./images/yosemite.png" alt="Yosemite Park"></img>
           <div class="places__title-container">
             <h2 class="places__title">Yosemite Valley</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
         <div class="places__card">
-          <img class="places__image" src="./images/louise.png"></img>
+          <img class="places__image" src="./images/louise.png" alt="Lake Louise"></img>
           <div class="places__title-container">
             <h2 class="places__title">Lake Louise</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
         <div class="places__card">
-          <img class="places__image" src="./images/baldmountains.png"></img>
+          <img class="places__image" src="./images/baldmountains.png" alt="bald Mountains"></img>
           <div class="places__title-container">
             <h2 class="places__title">Bald Mountains</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
         <div class="places__card">
-          <img class="places__image" src="./images/latemar.png"></img>
+          <img class="places__image" src="./images/latemar.png" alt="mountains and night sky"></img>
           <div class="places__title-container">
             <h2 class="places__title">Latemar</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
         <div class="places__card">
-          <img class="places__image" src="./images/vanois.png"></img>
+          <img class="places__image" src="./images/vanois.png" alt="mountains and lake"></img>
           <div class="places__title-container">
             <h2 class="places__title">Vanoise Nationa...</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
         <div class="places__card">
-          <img class="places__image" src="./images/lago.png"></img>
+          <img class="places__image" src="./images/lago.png" alt="boats docked at a lake in the mountains"></img>
           <div class="places__title-container">
             <h2 class="places__title">Lago di Braies</h2>
             <button class="button button__like">
-              <img class="button__image" src="./images/heartButton.svg">
+              <img class="button__image" src="./images/heartButton.svg" alt="heart icon">
             </button>
           </div> 
         </div>
@@ -88,6 +88,19 @@
       <div class="footer__copyright">© 2020 Around the U.S.</div>
     </footer>
   </div>
-  <script src="./script.js/"></script>
+  <div class="modal">
+    <div class="modal__container">
+      <button class="button button__close">
+        <img src="./images/closeButton.svg" class="button__image" alt="x close button">
+      </button>
+      <h2 class="modal__header">Edit profile</h2>
+      <form class="modal__form">
+        <input type="text" class="modal__value" value="Jacques Cousteau">
+        <input type="text" class="modal__value" value="Explorer">
+        <button type="submit" class="button__save">Save</button>
+      </form>
+    </div>
+  </div>
+  <script src="./index.js"></script>
 </body>
 </html>

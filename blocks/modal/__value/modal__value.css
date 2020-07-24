@@ -1,0 +1,15 @@
+.modal__value {
+  list-style: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding-bottom: 3%;
+  width: 358px;
+  margin-top: 7%;
+}
+
+@media screen and (max-width: 600px) {
+  .modal__value {
+    width: 200px;
+    margin-left: 5%;
+  }
+}

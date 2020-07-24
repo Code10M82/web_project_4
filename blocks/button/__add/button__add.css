@@ -4,6 +4,11 @@
   height: 50px;
   border: 2px solid #fff;
   margin-top: 4.5%;
+  transition: .2s ease-in;
+}
+
+.button__add:hover {
+  opacity: .6;
 }
 
 @media screen and (max-width: 831px) {

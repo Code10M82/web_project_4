@@ -1,0 +1,20 @@
+.button__close {
+  background-color: transparent;
+  margin-left: auto;
+  margin-top: -60px;
+  margin-right: -60px;
+  border: none;
+  transition: .2s ease-in;
+}
+
+.button__close:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 600px) {
+  .button__close {
+    transform: scale(.6);
+    margin-top: -40px;
+    margin-right: -40px;
+  }
+}
