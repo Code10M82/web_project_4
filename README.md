@@ -1,16 +1,16 @@
 # Project 4: Around The U.S.
 
-### Overview
+## Introduction
 
-* Figma
-* Images
+* Around the US is a website that allows you to add and like your favorite places from around the world. 
 
-**Figma**
+## Technologies Used
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* I introduce some interaction with this website! I have implemented JavaScript for the first time into my website. Responsive with uses of Flex and Grid. 
 
-**Images**
+## The Future
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+* I will be continuing to use JavaScript to get the page fully functioning.
 
-Have fun with JavaScript!
+
+https://code10m82.github.io/web_project_4/
