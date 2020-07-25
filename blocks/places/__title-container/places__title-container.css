@@ -1,7 +1,7 @@
 .places__title-container {
   display: flex;
   background-color: white;
-  width: 100%;
+  width: 282px;
   margin-top: -2%;
   border-radius: 0 0 10px 10px;
   justify-content: space-between;

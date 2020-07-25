@@ -1,5 +1,5 @@
 .button__add {
-  background-color: #000;
+  background: black url(../../../images/addButton.svg) no-repeat center;
   width: 150px;
   height: 50px;
   border: 2px solid #fff;

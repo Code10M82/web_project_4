@@ -1,7 +1,7 @@
 .button__like {
-  height: 20.76px;
-  width: 18.13px;
-  background-color: #fff;
+  height: 19.13px;
+  width: 20.76px;
+  background: white url(../../../images/heartButton.svg) no-repeat center;
   border: none;
   align-self: center;
   margin-right: 5%;
