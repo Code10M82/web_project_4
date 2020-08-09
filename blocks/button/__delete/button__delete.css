@@ -1,0 +1,12 @@
+.button__delete {
+  background: url(../../../images/deleteCanWhole.svg) no-repeat center;
+  height: 20px;
+  width: 18px;
+  object-fit: contain;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 23.79px;
+  right: 16.25px;
+}

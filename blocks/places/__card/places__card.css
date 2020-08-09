@@ -1,0 +1,6 @@
+.places__card {
+  position: relative;
+  height: 361px;
+  width: 282px;
+  border-radius: 10px 10px 10px 10px;
+}

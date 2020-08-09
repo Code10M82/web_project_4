@@ -23,66 +23,53 @@
         </div>
         <button class="button button__add"></button>
       </section>
-      <section class="places">
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/yosemite.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Yosemite Valley</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/louise.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Lake Louise</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/baldmountains.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Bald Mountains</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/latemar.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Latemar</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/vanois.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Vanoise Nationa...</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-        <div class="places__card">
-          <div class="places__image" style="background-image: url(./images/lago.png)"></div>
-          <div class="places__title-container">
-            <h2 class="places__title">Lago di Braies</h2>
-            <button class="button button__like"></button>
-          </div> 
-        </div>
-      </section>
+      <section class="places"></section>
     </main>
     <footer class="footer">
       <div class="footer__copyright">© 2020 Around the U.S.</div>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup popup__edit-profile">
     <div class="popup__container">
-      <button class="button button__close"></button>
+      <button class="button button__close button__close_edit"></button>
       <h2 class="popup__header">Edit profile</h2>
-      <form class="popup__form">
-        <input type="text" class="popup__value popup__value_name" value="Jacques Cousteau">
-        <input type="text" class="popup__value popup__value_title" value="Explorer">
-        <button type="submit" class="button button__save">Save</button>
+      <form class="popup__form popup__form_edit">
+        <input type="text" class="popup__value popup__edit_name" value="Jacques Cousteau">
+        <input type="text" class="popup__value popup__edit_title" value="Explorer">
+        <button type="submit" class="button button__save button__save_edit">Save</button>
       </form>
     </div>
   </div>
+  <div class="popup popup__add-card">
+    <div class="popup__container">
+      <button class="button button__close button__close_add"></button>
+      <h2 class="popup__header">New place</h2>
+      <form class="popup__form popup__form_add">
+        <input type="text" class="popup__value popup__add_image-name" placeholder="Title">
+        <input type="url" class="popup__value popup__add_image-link" placeholder="Image link">
+        <button type="submit" class="button button__save button__save_add">Create</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup__image-modal">
+    <div class="popup__container">
+      <button class="button button__close button__close_image"></button>
+      <figure class="popup__figure">
+        <img src="" alt="" class="popup__image">
+        <figcaption class="popup__image-title"></figcaption>
+      </figure>
+    </div>
+  </div>
+  <template class ="places__template">
+    <div class="places__card">
+      <button class="button button__delete"></button>
+      <div class="places__image" style=""></div>
+      <div class="places__title-container">
+        <h2 class="places__title"></h2>
+        <button class="button button__like"></button>
+      </div> 
+    </div>
+  </template>
   <script src="./index.js"></script>
 </body>
 </html>

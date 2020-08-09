@@ -6,3 +6,7 @@
   align-self: center;
   margin-right: 5%;
 }
+
+.button__like_active {
+  background: transparent url(../../../images/heartButtonLiked.svg) no-repeat center;
+}

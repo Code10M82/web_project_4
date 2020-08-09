@@ -1,14 +1,15 @@
+@import url(../places/__card/places__card.css);
 @import url(../places/__title-container/places__title-container.css);
 @import url(../places/__title/places__title.css);
 @import url(../button/__like/button__like.css);
 @import url(../places/__image/places__image.css);
+@import url(../button/__delete/button__delete.css);
 
 .places {
   display: grid;
   width: 70%;
   grid-gap: 21px 18px;
   margin: 47.25px auto 0;
-  margin-left: auto;
   padding: 0;
   grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
   justify-content: center;
