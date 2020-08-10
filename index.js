@@ -123,32 +123,28 @@ initialCards.forEach(data => {
 
 function addCard(cardTitle, cardImage) {
   const cardElement = placesTemplate.cloneNode(true);
-  cardElement.getElementbyClassName('.places__title').textContent = cardTitle;
-  cardElement.getElementbyClassName('.places__image').style.backgroundImage = `url(${cardImage})`;
-  formAdd.addEventListener('submit', event => {
-    event.preventDefault();
-    addCard(cardTitle.value, cardImage.value);
-    list.prepend(cardElement);
-  });
+  // console.log(cardTitle, typeof cardTitle);
+  // cardElement.querySelector('.places__title').textContent = 'PEW PEW PEW';
+  // cardElement.querySelector('.places__image').style.backgroundImage = `url(${cardImage})`;
 }
 
-// formAdd.addEventListener('submit', event => {
-//   event.preventDefault();
-//   addCard(cardTitle.value, cardImage.value);
-//   list.prepend(cardElement);
-// });
+document.querySelector('.button__save_add').addEventListener('click', event => {
+  event.preventDefault();
 
-saveAddButton.addEventListener('click', () => {
+  const cardElement = placesTemplate.cloneNode(true);
+  const cardTitle = cardElement.querySelector('.places__title');
+  const cardImage = cardElement.querySelector('.places__image');
+  const cardLikeButton = cardElement.querySelector('.button__like').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('button__like_active');
+  });
+
+  cardElement.querySelector('.places__title').textContent = nameAdd.value;
+  cardElement.querySelector('.places__image').style.backgroundImage = `url(${linkAdd.value})`;
+  addCard(cardTitle.value, cardImage.value);
+  list.prepend(cardElement);
   togglePopup(popupAddCard);
-})
+});
  
-
-  
- 
-
-  // cardLikeButton.addEventListener('click', () => {
-  //   cardLikeButton.classList.toggle('button__like_active');
-  // });
 
  
 
