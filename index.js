@@ -30,7 +30,13 @@ const nameProfile = document.querySelector('.profile__name');
 const titleProfile = document.querySelector('.profile__title');
 
 //Form Inputs Add Card
-
+const placesTemplate = document.querySelector('.places__template').content.querySelector('.places__card');
+const list = document.querySelector('.places');
+const cardElement = placesTemplate.cloneNode(true);
+const nameAdd = document.querySelector('.popup__add_image-name'); 
+const linkAdd = document.querySelector('.popup__add_image-link');
+const cardImage = cardElement.querySelector('.places__image');
+const cardTitle = cardElement.querySelector('.places__title');
 
 //Toggle Function
 function togglePopup(modal) {
@@ -94,49 +100,47 @@ const initialCards = [
   }
 ];
 
-const placesTemplate = document.querySelector('.places__template').content.querySelector('.places__card');
-const list = document.querySelector('.places');
-
-
-
-
-const nameAdd = document.querySelector('.popup__add_image-name'); 
-const linkAdd = document.querySelector('.popup__add_image-link');
-
-
-const cardElement = placesTemplate.cloneNode(true);
-
-
+//initial 6 cards
 initialCards.forEach(data => {
   const cardElement = placesTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector('.places__image');
-  const cardTitle = cardElement.querySelector('.places__title');
+const cardImage = cardElement.querySelector('.places__image');
+const cardTitle = cardElement.querySelector('.places__title');
+  
   const cardLikeButton = cardElement.querySelector('.button__like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__like_active');
   }); 
-  const cardDeleteButton = cardElement.querySelector('.button__delete');
+  const cardDeleteButton = cardElement.querySelector('.button__delete').addEventListener('click', function(){
+    list.removeChild(cardElement);
+    console.log('Emily is awesome');
+  });
   cardImage.style.backgroundImage = `url(${data.link})`;
   cardTitle.textContent = data.name;
   list.prepend(cardElement);
-  console.log(456);
 });
+
 
 function addCard(cardTitle, cardImage) {
   const cardElement = placesTemplate.cloneNode(true);
-  // console.log(cardTitle, typeof cardTitle);
-  // cardElement.querySelector('.places__title').textContent = 'PEW PEW PEW';
-  // cardElement.querySelector('.places__image').style.backgroundImage = `url(${cardImage})`;
 }
 
+
+//adding a card function
 document.querySelector('.button__save_add').addEventListener('click', event => {
   event.preventDefault();
 
   const cardElement = placesTemplate.cloneNode(true);
-  const cardTitle = cardElement.querySelector('.places__title');
-  const cardImage = cardElement.querySelector('.places__image');
+  
+  //like button
   const cardLikeButton = cardElement.querySelector('.button__like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__like_active');
   });
+
+  //delete button
+  const cardDeleteButton = cardElement.querySelector('.button__delete').addEventListener('click', function(){
+    list.removeChild(cardElement);
+    console.log('Emily is awesome');
+  });
+
 
   cardElement.querySelector('.places__title').textContent = nameAdd.value;
   cardElement.querySelector('.places__image').style.backgroundImage = `url(${linkAdd.value})`;
@@ -144,23 +148,13 @@ document.querySelector('.button__save_add').addEventListener('click', event => {
   list.prepend(cardElement);
   togglePopup(popupAddCard);
 });
- 
 
- 
+  cardImage.addEventListener('click', () => {
+    const popupImage = popupImageModal.querySelector('.popup__image');
+    const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+    //data not defined
+    popupImage.src = data.link;
+    popupImageTitle.textContent = data.name;
+    console.log('pew pew pew');
+  });
 
-  // cardDeleteButton.addEventListener('click', () => {
-  //   //handleCardDelete
-  // });
-
-  // cardImage.addEventListener('click', () => {
-  //   const popupImage = popupImageModal.querySelector('.popup__image');
-  //   const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
-  //   //data not defined
-  //   popupImage.src = data.link;
-  //   popupImageTitle.textContent = data.name;
-
-  //   togglePopup(popupImageModal);
-  // });
-  
-
-// https://unsplash.com/photos/R3pUGn5YiTg Aurora Borealis
