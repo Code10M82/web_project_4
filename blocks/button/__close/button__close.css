@@ -25,3 +25,9 @@
     margin-right: -30px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .button__close_image {
+    margin-left: 290px;
+  }
+}
