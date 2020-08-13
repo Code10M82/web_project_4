@@ -1,5 +1,5 @@
 .button__close {
-  background: black url(../../../images/closeButton.svg) no-repeat center;
+  background: transparent url(../../../images/closeButton.svg) no-repeat center;
   width: 40.7px;
   height: 40.7px;
   margin-left: auto;
@@ -11,6 +11,11 @@
 
 .button__close:hover {
   opacity: .6;
+}
+
+.button__close_image {
+  position: absolute;
+  margin-left: 400px;
 }
 
 @media screen and (max-width: 600px) {

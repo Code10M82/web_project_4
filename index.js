@@ -5,6 +5,7 @@ const addButton = document.querySelector('.button__add');
 //Close Buttons
 const closeEditButton = document.querySelector('.button__close_edit');
 const closeAddButton = document.querySelector('.button__close_add');
+const closeImagePopup = document.querySelector('.button__close_image');
 
 //Save Buttons
 const saveEditButton = document.querySelector('.button__save_edit');
@@ -37,6 +38,11 @@ const nameAdd = document.querySelector('.popup__add_image-name');
 const linkAdd = document.querySelector('.popup__add_image-link');
 const cardImage = cardElement.querySelector('.places__image');
 const cardTitle = cardElement.querySelector('.places__title');
+
+//close Image Popup
+closeImagePopup.addEventListener('click', () => {
+  togglePopup(popupImageModal);
+});
 
 //Toggle Function
 function togglePopup(modal) {
@@ -106,13 +112,27 @@ initialCards.forEach(data => {
 const cardImage = cardElement.querySelector('.places__image');
 const cardTitle = cardElement.querySelector('.places__title');
   
+  //like button
   const cardLikeButton = cardElement.querySelector('.button__like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__like_active');
-  }); 
+  });
+  
+  //delete button
   const cardDeleteButton = cardElement.querySelector('.button__delete').addEventListener('click', function(){
     list.removeChild(cardElement);
     console.log('Emily is awesome');
   });
+
+  //image popup open
+  cardImage.addEventListener('click', () => {
+    togglePopup(popupImageModal);
+    const popupImage = popupImageModal.querySelector('.popup__image');
+    const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+     popupImage.src = data.link;
+    popupImageTitle.textContent = data.name;
+    console.log('pew pew pew');
+  });
+
   cardImage.style.backgroundImage = `url(${data.link})`;
   cardTitle.textContent = data.name;
   list.prepend(cardElement);
@@ -127,7 +147,6 @@ function addCard(cardTitle, cardImage) {
 //adding a card function
 document.querySelector('.button__save_add').addEventListener('click', event => {
   event.preventDefault();
-
   const cardElement = placesTemplate.cloneNode(true);
   
   //like button
@@ -141,6 +160,12 @@ document.querySelector('.button__save_add').addEventListener('click', event => {
     console.log('Emily is awesome');
   });
 
+  //popup image
+  cardImage.addEventListener('click', () => {
+    togglePopup(popupImageModal);
+    console.log('pew pew pew');
+  });
+
 
   cardElement.querySelector('.places__title').textContent = nameAdd.value;
   cardElement.querySelector('.places__image').style.backgroundImage = `url(${linkAdd.value})`;
@@ -149,12 +174,20 @@ document.querySelector('.button__save_add').addEventListener('click', event => {
   togglePopup(popupAddCard);
 });
 
-  cardImage.addEventListener('click', () => {
-    const popupImage = popupImageModal.querySelector('.popup__image');
-    const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
-    //data not defined
-    popupImage.src = data.link;
-    popupImageTitle.textContent = data.name;
-    console.log('pew pew pew');
-  });
+//  cardImage.addEventListener('click', () => {
+//     togglePopup(popupImageModal);
+//     console.log('pew pew pew');
+//   }); 
+
+
+
+  // <div class="popup popup__image-modal">
+  //   <div class="popup__container">
+  //     <button class="button button__close button__close_image"></button>
+  //     <figure class="popup__figure">
+  //       <img src="" alt="" class="popup__image">
+  //       <figcaption class="popup__image-title"></figcaption>
+  //     </figure>
+  //   </div>
+  // </div>
 

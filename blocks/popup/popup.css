@@ -20,3 +20,26 @@
   display: flex;
 }
 
+.popup__figure_image {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.popup__image {
+  width: 100%;
+  min-width: 250px;
+  max-width: 75vw;
+  min-height: 330px;
+  max-height: 75vh;
+  object-position: center;
+  object-fit: cover;
+  position: relative;
+  
+}
+
+.popup__container_image {
+  background-color: transparent;
+}
+
