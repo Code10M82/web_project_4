@@ -12,11 +12,6 @@
   opacity: .6;
 }
 
-.button__close_image {
-  position: absolute;
-  margin-left: 400px;
-}
-
 @media screen and (max-width: 600px) {
   .button__close {
     transform: scale(.6);
@@ -25,8 +20,3 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .button__close_image {
-    margin-left: 290px;
-  }
-}

@@ -1,0 +1,10 @@
+.button__close-image {
+  position: absolute;
+  margin-left: 400px;
+}
+
+@media screen and (max-width: 600px) {
+  .button__close_image {
+    margin-left: 290px;
+  }
+}
