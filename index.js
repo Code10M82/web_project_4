@@ -112,7 +112,6 @@ function createCard(title, link) {
   
   cardTitle.textContent = title;
   cardImage.style.backgroundImage = `url(${link})`;
-  cardImage.setAttribute("alt", title);
   
   //delete
   cardLikeButton.addEventListener('click', function(evt) {
