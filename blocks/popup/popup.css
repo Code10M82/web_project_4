@@ -1,6 +1,9 @@
 @import url(../popup/__container/popup__container.css);
 @import url(../popup/__header/popup__header.css);
 @import url(../popup/__form/popup__form.css);
+@import url(../popup/__figure_image/popup__figure_image.css);
+@import url(../popup/__container-image/popup__container-image.css);
+@import url(../popup/__image/popup__image.css);
 @import url(../popup/__value/popup__value.css);
 @import url(../button/__save/button__save.css);
 @import url(../button/__close/button__close.css);
@@ -26,44 +29,3 @@
   opacity: 1;
   visibility: visible;
 }
-
-.popup__figure_image {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-}
-
-.popup__image {
-  width: 100%;
-  min-width: 250px;
-  max-width: 75vw;
-  min-height: 330px;
-  max-height: 75vh;
-  object-position: center;
-  object-fit: cover;
-  position: relative;
-}
-
-.popup__container_image {
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  margin-top: 10%;
-}
-
-/* width: auto;
-height: auto;
-background-color: rgba(0, 0, 0, .8);
-position: fixed;
-top: 0;
-justify-content: center;
-align-content: center;
-opacity: 0;
-transition: visibility 0s .3s, opacity .3s linear; */
-
-/* display: flex;
-  height: 100%;
-  width: 100%;
-  transition: opacity .3s linear;
-  opacity: 1; */
