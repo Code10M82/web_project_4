@@ -18,10 +18,10 @@
         </div>
         <div class="profile__text-container">
           <h1 class="profile__name">Jacques Cousteau</h1>
-          <button class="button button__edit"></button>
+          <button class="button button__edit" aria-label="Edit Button"></button>
           <p class="profile__title">Explorer</p>
         </div>
-        <button class="button button__add"></button>
+        <button class="button button__add" aria-label="add more cards"></button>
       </section>
       <section class="places"></section>
     </main>
@@ -31,29 +31,29 @@
   </div>
   <div class="popup popup__edit-profile">
     <div class="popup__container">
-      <button class="button button__close button__close_edit"></button>
+      <button class="button button__close button__close_edit" aria-label="close edit section"></button>
       <h2 class="popup__header">Edit profile</h2>
       <form class="popup__form popup__form_edit">
         <input type="text" class="popup__value popup__edit_name" value="Jacques Cousteau">
         <input type="text" class="popup__value popup__edit_title" value="Explorer">
-        <button type="submit" class="button button__save button__save_edit">Save</button>
+        <button type="submit" class="button button__save button__save_edit" aria-label="save button">Save</button>
       </form>
     </div>
   </div>
   <div class="popup popup__add-card">
     <div class="popup__container">
-      <button class="button button__close button__close_add"></button>
+      <button class="button button__close button__close_add" aria-label="close add a card section"></button>
       <h2 class="popup__header">New place</h2>
       <form class="popup__form popup__form_add">
         <input type="text" class="popup__value popup__add_image-name" placeholder="Title">
         <input type="url" class="popup__value popup__add_image-link" placeholder="Image link">
-        <button type="submit" class="button button__save button__save_add">Create</button>
+        <button type="submit" class="button button__save button__save_add" aria-label="save your card button">Create</button>
       </form>
     </div>
   </div>
   <div class="popup popup__image-modal">
     <div class="popup__container popup__container-image">
-      <button class="button button__close button__close_image"></button>
+      <button class="button button__close button__close_image" aria-label="close image button"></button>
       <figure class="popup__figure popup__figure_image">
         <img src="" alt="" class="popup__image">
         <figcaption class="popup__image-title"></figcaption>
@@ -62,11 +62,11 @@
   </div>
   <template class ="places__template">
     <div class="places__card">
-      <button class="button button__delete"></button>
+      <button class="button button__delete" aria-label="delete card button"></button>
       <div class="places__image" ></div>
       <div class="places__title-container">
         <h2 class="places__title"></h2>
-        <button class="button button__like"></button>
+        <button class="button button__like" aria-label="like button"></button>
       </div> 
     </div>
   </template>

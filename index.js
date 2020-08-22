@@ -59,7 +59,7 @@ closeAddButton.addEventListener('click', () => {
 
 
 //Edit Profile Form
-formEdit.addEventListener('submit', function formSubmitHandler(e) {
+formEdit.addEventListener('submit', (e) => {
   e.preventDefault();
   nameProfile.textContent = nameEdit.value;
   titleProfile.textContent = titleEdit.value; 
@@ -69,6 +69,10 @@ formEdit.addEventListener('submit', function formSubmitHandler(e) {
 saveEditButton.addEventListener('click', () => {
   togglePopup(popupEdit);
 });
+
+//create card 
+const inputImage = document.querySelector('.popup__add_image-name');
+const inputTitle = document.querySelector('.popup__add_image-link');
 
 //Gallery Array
 const initialCards = [
@@ -113,13 +117,13 @@ function createCard(title, link) {
   cardTitle.textContent = title;
   cardImage.style.backgroundImage = `url(${link})`;
   
-  //delete
-  cardLikeButton.addEventListener('click', function(evt) {
+  //like
+  cardLikeButton.addEventListener('click', (evt) => {
         evt.target.classList.toggle('button__like_active');
   });
 
-  //like
-  cardDeleteButton.addEventListener('click', function() {
+  //delete
+  cardDeleteButton.addEventListener('click', () => {
         list.removeChild(cardElement);
   });
 
@@ -127,6 +131,7 @@ function createCard(title, link) {
     togglePopup(popupImageModal);
     const popupImage = popupImageModal.querySelector('.popup__image');
     const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+    cardImage.setAttribute("alt", title);
     popupImage.src = link;
     popupImageTitle.textContent = title;
   });
@@ -136,10 +141,7 @@ function createCard(title, link) {
 
 formAdd.addEventListener('submit', (event) => {
   event.preventDefault();
-  const inputImage = document.querySelector('.popup__add_image-name');
-  const inputTitle = document.querySelector('.popup__add_image-link');
   const cardElement = createCard(inputImage.value, inputTitle.value);
-  
   list.prepend(cardElement);
   togglePopup(popupAddCard); 
 });
