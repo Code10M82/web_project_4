@@ -15,7 +15,7 @@ function hideErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
 }
 
 function checkInputValidity(input, form, rest) {
-  console.log("validation")
+  console.log("validation");
   if(input.validity.valid) {
     hideErrorMessage(input, form, rest);
   } else {
@@ -24,7 +24,7 @@ function checkInputValidity(input, form, rest) {
 }
 
 function toggleButtonState(inputs, button, {inactiveButtonClass, ...rest}) {
-  console.log("button")
+  console.log("button");
   const isValid = inputs.every((input) => input.validity.valid);
   if(isValid) {
     button.classList.remove(inactiveButtonClass);
@@ -47,9 +47,9 @@ forms.forEach((form) => {
     input.addEventListener('input', () => {
       checkInputValidity(input, form, rest);
       toggleButtonState(inputs, button, rest);
-    })
-  })
-})
+    });
+  });
+});
 }
 
 enableValidation({
