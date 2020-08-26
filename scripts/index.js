@@ -36,9 +36,33 @@ closeImagePopup.addEventListener('click', () => {
   togglePopup(popupImageModal);
 });
 
+// const popup = document.querySelectorAll('.popup');
+
+//esc key event
+const closeEsc = ({ keyCode }) => {
+  if (keyCode === 27 ) {
+    togglePopup();
+  } 
+};
+
+//mouse click event
+const closeClick = ({ target }) => {
+  if (target.classList.contains('.button__close') ||
+      target.classList.contains('.popup'))  {
+    togglePopup();
+  }
+};
+
 //Toggle Function
 function togglePopup(modal) {
   modal.classList.toggle('popup_open');
+  if (modal.classList.contains('popup_open')) {
+    modal.addEventListener('click', closeClick);
+    document.addEventListener('keydown', closeEsc);
+  } else {
+    modal.removeEventListener('click', closeClick);
+    document.removeEventListener('keydown', closeEsc);
+  }
 }
 
 //Open/Close Edit Profile

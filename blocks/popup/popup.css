@@ -30,3 +30,13 @@
   opacity: 1;
   visibility: visible;
 }
+
+.popup__error_visible {
+  opacity: 1;
+  color: #ff0000;
+}
+
+.popup__input_type_error {
+  opacity: 1;
+  color: #ff0000;
+}

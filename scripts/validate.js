@@ -15,7 +15,6 @@ function hideErrorMessage(input, form, {errorClass, inputErrorClass, ...rest}) {
 }
 
 function checkInputValidity(input, form, rest) {
-  console.log("validation");
   if(input.validity.valid) {
     hideErrorMessage(input, form, rest);
   } else {
@@ -24,7 +23,6 @@ function checkInputValidity(input, form, rest) {
 }
 
 function toggleButtonState(inputs, button, {inactiveButtonClass, ...rest}) {
-  console.log("button");
   const isValid = inputs.every((input) => input.validity.valid);
   if(isValid) {
     button.classList.remove(inactiveButtonClass);
@@ -34,13 +32,13 @@ function toggleButtonState(inputs, button, {inactiveButtonClass, ...rest}) {
 }
 
 function enableValidation({formSelector, inputSelector, submitButtonSelector, ...rest}) {
-const forms = [...document.querySelectorAll(formSelector)];
+const forms = Array.from(document.querySelectorAll(formSelector));
 
 forms.forEach((form) => {
   form.addEventListener('submit', ((e) => {
       e.preventDefault();
   }));
-  const inputs = [...form.querySelectorAll(inputSelector)];
+  const inputs = Array.from(form.querySelectorAll(inputSelector));
   const button = form.querySelector(submitButtonSelector);
   
   inputs.forEach((input) => {
@@ -54,9 +52,9 @@ forms.forEach((form) => {
 
 enableValidation({
 formSelector: ".popup__form",
-inputSelector: ".popup__input",
-submitButtonSelector: ".popup__button",
-inactiveButtonClass: "popup__button_disabled",
-inputErrorClass: "popup__input_type_error",
-errorClass: "popup__error_visible"
+inputSelector: ".popup__value",
+submitButtonSelector: ".button__save",
+inactiveButtonClass: "popup__button_disabled",//
+inputErrorClass: "popup__input_type_error",//
+errorClass: "popup__error_visible"//
 });
