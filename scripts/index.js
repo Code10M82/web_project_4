@@ -40,42 +40,38 @@ closeImagePopup.addEventListener('click', () => {
 
 //esc key event
 const closeEsc = ({ keyCode }) => {
-  if (keyCode === 27 ) {
-    togglePopup();
-  } 
+  if (keyCode === 27) {
+    const firstModal = document.querySelector('.popup_open');
+    togglePopup(firstModal);
+  }
 };
 
 //mouse click event
 const closeClick = ({ target }) => {
   if (target.classList.contains('.button__close') ||
-      target.classList.contains('.popup'))  {
+    target.classList.contains('.popup')) {
     togglePopup();
   }
 }
 
 
-// //Toggle Function
-// function togglePopup(modals) {
-//   Array.from(modals).forEach((modal) => {
-//     modal.classList.toggle('popup_open');
-//     if (modal.classList.contains('popup_open')) {
-//       modal.addEventListener('click', closeClick);
-//       document.addEventListener('keydown', closeEsc);
-//     } else {
-//       modal.removeEventListener('click', closeClick);
-//       document.removeEventListener('keydown', closeEsc);
-//     }
-//   });
-// }
-
+//Toggle Function
 function togglePopup(modal) {
   modal.classList.toggle('popup_open');
+  if (modal.classList.contains('popup_open')) {
+    modal.addEventListener('click', closeClick);
+    document.addEventListener('keydown', closeEsc);
+  } else {
+    modal.removeEventListener('click', closeClick);
+    document.removeEventListener('keydown', closeEsc);
+  }
 }
+
 
 //Open/Close Edit Profile
 editButton.addEventListener('click', () => {
   togglePopup(popupEdit);
-}); 
+});
 
 closeEditButton.addEventListener('click', () => {
   togglePopup(popupEdit);
@@ -94,7 +90,7 @@ closeAddButton.addEventListener('click', () => {
 formEdit.addEventListener('submit', (e) => {
   e.preventDefault();
   nameProfile.textContent = nameEdit.value;
-  titleProfile.textContent = titleEdit.value; 
+  titleProfile.textContent = titleEdit.value;
 });
 
 //Save Edit Button Function
@@ -145,18 +141,18 @@ function createCard(title, link) {
   const cardTitle = cardElement.querySelector('.places__title');
   const cardLikeButton = cardElement.querySelector('.button__like');
   const cardDeleteButton = cardElement.querySelector('.button__delete');
-  
+
   cardTitle.textContent = title;
   cardImage.style.backgroundImage = `url(${link})`;
-  
+
   //like
   cardLikeButton.addEventListener('click', (evt) => {
-        evt.target.classList.toggle('button__like_active');
+    evt.target.classList.toggle('button__like_active');
   });
 
   //delete
   cardDeleteButton.addEventListener('click', () => {
-        list.removeChild(cardElement);
+    list.removeChild(cardElement);
   });
 
   cardImage.addEventListener('click', () => {
@@ -175,5 +171,5 @@ formAdd.addEventListener('submit', (event) => {
   event.preventDefault();
   const cardElement = createCard(inputImage.value, inputTitle.value);
   list.prepend(cardElement);
-  togglePopup(popupAddCard); 
+  togglePopup(popupAddCard);
 });
