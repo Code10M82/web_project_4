@@ -48,9 +48,9 @@ const closeEsc = ({ keyCode }) => {
 
 //mouse click event
 const closeClick = ({ target }) => {
-  if (target.classList.contains('.button__close') ||
-    target.classList.contains('.popup')) {
-    togglePopup();
+  if (target === document.querySelector('.popup_open')) { 
+    const firstModal = document.querySelector('.popup_open');
+    togglePopup(firstModal);
   }
 }
 
