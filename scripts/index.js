@@ -36,21 +36,18 @@ closeImagePopup.addEventListener('click', () => {
   togglePopup(popupImageModal);
 });
 
-
-
 //esc key event
 const closeEsc = ({ keyCode }) => {
   if (keyCode === 27) {
-    const firstModal = document.querySelector('.popup_open');
-    togglePopup(firstModal);
+    const modal = document.querySelector('.popup_open');
+    togglePopup(modal);
   }
 };
 
 //mouse click event
 const closeClick = ({ target }) => {
   if (target === document.querySelector('.popup_open')) { 
-    const firstModal = document.querySelector('.popup_open');
-    togglePopup(firstModal);
+    togglePopup(target);
   }
 }
 
