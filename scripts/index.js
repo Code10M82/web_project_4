@@ -36,7 +36,7 @@ closeImagePopup.addEventListener('click', () => {
   togglePopup(popupImageModal);
 });
 
-// const popup = document.querySelectorAll('.popup');
+
 
 //esc key event
 const closeEsc = ({ keyCode }) => {
@@ -51,24 +51,32 @@ const closeClick = ({ target }) => {
       target.classList.contains('.popup'))  {
     togglePopup();
   }
-};
+}
 
-//Toggle Function
+
+// //Toggle Function
+// function togglePopup(modals) {
+//   Array.from(modals).forEach((modal) => {
+//     modal.classList.toggle('popup_open');
+//     if (modal.classList.contains('popup_open')) {
+//       modal.addEventListener('click', closeClick);
+//       document.addEventListener('keydown', closeEsc);
+//     } else {
+//       modal.removeEventListener('click', closeClick);
+//       document.removeEventListener('keydown', closeEsc);
+//     }
+//   });
+// }
+
 function togglePopup(modal) {
   modal.classList.toggle('popup_open');
-  if (modal.classList.contains('popup_open')) {
-    modal.addEventListener('click', closeClick);
-    document.addEventListener('keydown', closeEsc);
-  } else {
-    modal.removeEventListener('click', closeClick);
-    document.removeEventListener('keydown', closeEsc);
-  }
 }
 
 //Open/Close Edit Profile
 editButton.addEventListener('click', () => {
   togglePopup(popupEdit);
 }); 
+
 closeEditButton.addEventListener('click', () => {
   togglePopup(popupEdit);
 });
