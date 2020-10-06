@@ -5,9 +5,10 @@
 @import url(../popup/__container-image/popup__container-image.css);
 @import url(../popup/__image/popup__image.css);
 @import url(../popup/__value/popup__value.css);
-@import url(../button/__save/button__save.css);
-@import url(../button/__close/button__close.css);
-@import url(../button/__close/_image/button__close_image.css);
+@import url(../button/_save/button_save.css);
+@import url(../button/_close/button_close.css);
+@import url(../button/_close_image/button_close_image.css);
+@import url(../popup/__button_disabled/popup__button_disabled.css);
 
 .popup {
   display: flex;

@@ -1,28 +1,28 @@
 //Open Buttons
-const editButton = document.querySelector('.button__edit');
-const addButton = document.querySelector('.button__add');
+const editButton = document.querySelector('.button_edit');
+const addButton = document.querySelector('.button_add');
 
 //Close Buttons
-const closeEditButton = document.querySelector('.button__close_edit');
-const closeAddButton = document.querySelector('.button__close_add');
-const closeImagePopup = document.querySelector('.button__close_image');
+const closeEditButton = document.querySelector('.button_close_edit');
+const closeAddButton = document.querySelector('.button_close_add');
+const closeImagePopup = document.querySelector('.button_close_image');
 
 //Save Buttons
-const saveEditButton = document.querySelector('.button__save_edit');
-const saveAddButton = document.querySelector('.button__save_add');
+const saveEditButton = document.querySelector('.button_save_edit');
+const saveAddButton = document.querySelector('.button_save_add');
 
 //Modals
-const popupEdit = document.querySelector('.popup__edit-profile');
-const popupAddCard = document.querySelector('.popup__add-card');
-const popupImageModal = document.querySelector('.popup__image-modal');
+const popupEdit = document.querySelector('.popup_edit-profile');
+const popupAddCard = document.querySelector('.popup_add-card');
+const popupImageModal = document.querySelector('.popup_image-modal');
 
 //Form
 const formEdit = document.querySelector('.popup__form_edit');
 const formAdd = document.querySelector('.popup__form_add');
 
 //Form Inputs Edit Profile
-const nameEdit = document.querySelector('.popup__edit_name');
-const titleEdit = document.querySelector('.popup__edit_title');
+const nameEdit = document.querySelector('.popup__edit-name');
+const titleEdit = document.querySelector('.popup__edit-title');
 const nameProfile = document.querySelector('.profile__name');
 const titleProfile = document.querySelector('.profile__title');
 
@@ -37,8 +37,10 @@ closeImagePopup.addEventListener('click', () => {
 });
 
 //esc key event
+const escKey = 27;
+
 const closeEsc = ({ keyCode }) => {
-  if (keyCode === 27) {
+  if (keyCode === escKey) {
     const modal = document.querySelector('.popup_open');
     togglePopup(modal);
   }
@@ -136,15 +138,15 @@ function createCard(title, link) {
   const cardElement = placesTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector('.places__image');
   const cardTitle = cardElement.querySelector('.places__title');
-  const cardLikeButton = cardElement.querySelector('.button__like');
-  const cardDeleteButton = cardElement.querySelector('.button__delete');
+  const cardLikeButton = cardElement.querySelector('.button_like');
+  const cardDeleteButton = cardElement.querySelector('.button_delete');
 
   cardTitle.textContent = title;
   cardImage.style.backgroundImage = `url(${link})`;
 
   //like
   cardLikeButton.addEventListener('click', (evt) => {
-    evt.target.classList.toggle('button__like_active');
+    evt.target.classList.toggle('button_like_active');
   });
 
   //delete

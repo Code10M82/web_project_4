@@ -18,10 +18,10 @@
         </div>
         <div class="profile__text-container">
           <h1 class="profile__name">Jacques Cousteau</h1>
-          <button class="button button__edit" aria-label="Edit Button"></button>
+          <button class="button button_edit" aria-label="Edit Button"></button>
           <p class="profile__title">Explorer</p>
         </div>
-        <button class="button button__add" aria-label="add more cards"></button>
+        <button class="button button_add" aria-label="add more cards"></button>
       </section>
       <section class="places"></section>
     </main>
@@ -29,25 +29,25 @@
       <div class="footer__copyright">© 2020 Around the U.S.</div>
     </footer>
   </div>
-  <div class="popup popup__edit-profile">
+  <div class="popup popup_edit-profile">
     <div class="popup__container">
-      <button class="button button__close button__close_edit" aria-label="close edit section"></button>
+      <button class="button button_close button_close_edit" aria-label="close edit section"></button>
       <h2 class="popup__header">Edit profile</h2>
       <!-- FORM EDIT -->
       <form class="popup__form popup__form_edit">
-        <input  id="profile-name" type="text" class="popup__value popup__edit_name" value="Jacques Cousteau" required minlength="2" maxlength="40">
+        <input  id="profile-name" type="text" class="popup__value popup__edit-name" value="Jacques Cousteau" required minlength="2" maxlength="40">
         <span id="profile-name-error" class="popup__error"></span>
 
-        <input id="profile-text" type="text" class="popup__value popup__edit_title" value="Explorer" required minlength="2" maxlength="200">
+        <input id="profile-text" type="text" class="popup__value popup__edit-title" value="Explorer" required minlength="2" maxlength="200">
         <span id="profile-text-error" class="popup__error"></span>
 
-        <button type="submit" class="button button__save button__save_edit popup__button_disabled" aria-label="save">Save</button>
+        <button type="submit" class="button button_save button_save_edit popup__button_disabled" aria-label="save">Save</button>
       </form>
     </div>
   </div>
-  <div class="popup popup__add-card">
+  <div class="popup popup_add-card">
     <div class="popup__container">
-      <button class="button button__close button__close_add" aria-label="close add a card section"></button>
+      <button class="button button_close button_close_add" aria-label="close add a card section"></button>
       <h2 class="popup__header">New place</h2>
       <!-- FORM ADD -->
       <form class="popup__form popup__form_add">
@@ -57,13 +57,13 @@
         <input id="card-link" type="url" class="popup__value popup__add_image-link" placeholder="Image link" required>
         <span id="card-link-error" class="popup__error"></span>
 
-        <button type="submit" class="button button__save button__save_add popup__button_disabled" aria-label="save your card button">Create</button>
+        <button type="submit" class="button button_save button_save_add popup__button_disabled" aria-label="save your card button">Create</button>
       </form>
     </div>
   </div>
-  <div class="popup popup__image-modal">
+  <div class="popup popup_image-modal">
     <div class="popup__container popup__container-image">
-      <button class="button button__close button__close_image" aria-label="close image button"></button>
+      <button class="button button_close button_close_image" aria-label="close image button"></button>
       <figure class="popup__figure popup__figure_image">
         <img src="" alt="" class="popup__image">
         <figcaption class="popup__image-title"></figcaption>
@@ -72,11 +72,11 @@
   </div>
   <template class ="places__template">
     <div class="places__card">
-      <button class="button button__delete" aria-label="delete card button"></button>
+      <button class="button button_delete" aria-label="delete card button"></button>
       <div class="places__image" ></div>
       <div class="places__title-container">
         <h2 class="places__title"></h2>
-        <button class="button button__like" aria-label="like button"></button>
+        <button class="button button_like" aria-label="like button"></button>
       </div> 
     </div>
   </template>

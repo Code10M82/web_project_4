@@ -1,4 +1,4 @@
-.button__like {
+.button_like {
   height: 19.13px;
   width: 20.76px;
   background: white url(../../../images/heartButton.svg) no-repeat center;
@@ -7,6 +7,6 @@
   margin-right: 5%;
 }
 
-.button__like_active {
+.button_like_active {
   background: transparent url(../../../images/heartButtonLiked.svg) no-repeat center;
 }

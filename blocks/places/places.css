@@ -1,9 +1,9 @@
 @import url(../places/__card/places__card.css);
 @import url(../places/__title-container/places__title-container.css);
 @import url(../places/__title/places__title.css);
-@import url(../button/__like/button__like.css);
+@import url(../button/_like/button_like.css);
 @import url(../places/__image/places__image.css);
-@import url(../button/__delete/button__delete.css);
+@import url(../button/_delete/button_delete.css);
 
 .places {
   display: grid;

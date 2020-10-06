@@ -53,7 +53,7 @@ forms.forEach((form) => {
 enableValidation({
 formSelector: ".popup__form",
 inputSelector: ".popup__value",
-submitButtonSelector: ".button__save",
+submitButtonSelector: ".button_save",
 inactiveButtonClass: "popup__button_disabled",//
 inputErrorClass: "popup__input_type_error",//
 errorClass: "popup__error_visible"//

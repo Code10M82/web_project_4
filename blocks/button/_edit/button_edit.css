@@ -1,4 +1,4 @@
-.button__edit {
+.button_edit {
   width: 24px;
   height: 24px;
   background: black url(../../../images/editButton.svg) no-repeat center;
@@ -10,12 +10,12 @@
   transition: .2s ease-in;
 }
 
-.button__edit:hover {
+.button_edit:hover {
   opacity: .6;
 }
 
 @media screen and (max-width: 831px) {
-  .button__edit {
+  .button_edit {
    width: 18px;
    height: 18px;
    margin-top: 3%;
@@ -24,19 +24,19 @@
 }
 
 @media screen and (max-width: 650px) {
-  .button__edit {
+  .button_edit {
     margin-top: 4%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .button__edit {
+  .button_edit {
     margin-top: 5%;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .button__edit {
+  .button_edit {
     margin-top: 7%;
   }
 }
