@@ -27,18 +27,18 @@ export default class FormValidation {
       } else {
         _showErrorMessage(errorClass, inputErrorClass);
       }
-    }
   }
 
   _toggleButtonState(settings, formElement, inactiveButtonClass) {
       const isValid = this._formElement.every((input) => this._settings.validity.valid);
+      
       if(isValid) {
         button.classList.remove(inactiveButtonClass);
       } else {
         button.classList.add(inactiveButtonClass);
       }
     }
-  }
+  
 
   _setEventListeners() {
     const inputs = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector));

@@ -1,5 +1,7 @@
 import Toggle from 'utils.js';
 
+console.log(Toggle);
+
 export default class Card {
   constructor(data, cardTemplateSelector) {
     this._cardTitle = data.title;
@@ -39,8 +41,6 @@ export default class Card {
 
       togglePopup(popupImageModal);
 
-
-
     });
   }
 
@@ -48,10 +48,10 @@ export default class Card {
     this._card.addEventListener('click', (evt) => {
       evt.target.classList.toggle('button_like_active');
     });
-
+  }
     _delete() {
       this._card.remove();
     }
-    const card = new Card();
-  }
 }
+
+const card = new Card();

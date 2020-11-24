@@ -1,6 +1,7 @@
-import FormValidation from 'FormValidation.js';
-import Toggle from 'utils.js';
-import Card from 'card.js';
+import FormValidation from '../scripts/FormValidation.js';
+import Toggle from "../scripts/Utils.js";
+import Card from '../scripts/Card.js';
+
 
  const defaultConfig = {
     formSelector: ".popup__form",
