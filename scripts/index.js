@@ -1,7 +1,7 @@
 import FormValidation from '../scripts/FormValidation.js';
-// import Toggle from "../scripts/Utils.js";
 import Card from '../scripts/Card.js';
 
+// import Toggle from "../scripts/Utils.js";
 console.log("after imports index");
  const defaultConfig = {
     formSelector: ".popup__form",
@@ -191,9 +191,9 @@ initialCards.forEach((data) => {
 //   return cardElement;
 // }
 
-formAdd.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const cardElement = createCard(inputImage.value, inputTitle.value);
-  list.prepend(cardElement);
-  togglePopup(popupAddCard);
-});
+// formAdd.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   const cardElement = createCard(inputImage.value, inputTitle.value);
+//   list.prepend(cardElement);
+//   togglePopup(popupAddCard);
+// });
