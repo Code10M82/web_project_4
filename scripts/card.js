@@ -31,15 +31,15 @@ function togglePopup(modal) {
 }
 
 export default class Card {
-  constructor(data, cardTemplateSelector) {
-    this._cardTemplateSelector = cardTemplateSelector;
+  constructor(data, placesTemplate) {
+    this._placesTemplate = placesTemplate;
     this._cardTitle = data.name;
     this._cardImage = data.link;
   
   }
 
   _createNewTemplate() {
-    this._cardTemplate = document.querySelector(this._cardTemplateSelector).content.querySelector('.places__template');
+    this._cardTemplateSelector = document.querySelector(placesTemplate).content.querySelector('.places__template');
   }
 
   _eventHandlers() {
@@ -83,4 +83,4 @@ export default class Card {
   }
 }
 
-const card = new Card();
+// const card = new Card();

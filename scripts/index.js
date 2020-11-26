@@ -2,7 +2,6 @@ import FormValidation from './FormValidation.js';
 import Card from './Card.js';
 
 // import Toggle from "../scripts/Utils.js";
-console.log("after imports index");
  const defaultConfig = {
     formSelector: ".popup__form",
     inputSelector: ".popup__value",
@@ -15,11 +14,7 @@ console.log("after imports index");
   // const formEdit = document.querySelector('.popup__form popup__form_edit');
   // const formAdd = document.querySelector('.popup__form popup__form_add');
 
-  const editFormValidator = new FormValidation(defaultConfig, formEdit);
-  const addFormValidator = new FormValidation(defaultConfig, formAdd);
-
-  editFormValidator.enableValidation();
-  addFormValidator.enableValidation();
+ 
 
 
 //Open Buttons
@@ -59,6 +54,12 @@ const list = document.querySelector('.places');
 closeImagePopup.addEventListener('click', () => {
   togglePopup(popupImageModal);
 });
+
+const editFormValidator = new FormValidation(defaultConfig, formEdit);
+const addFormValidator = new FormValidation(defaultConfig, formAdd);
+
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 //esc key event
 const escKey = 27;
@@ -153,9 +154,11 @@ const initialCards = [
   }
 ];
 
+
+
 initialCards.forEach((data) => {
-  new Card (data, cardTemplateSelector);
-  list.append(Card);
+  // new Card (data, cardTemplateSelector);
+  list.append(new Card(data, placesTemplate));
 });
 
 // function createCard(title, link) {
