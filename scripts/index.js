@@ -1,5 +1,5 @@
-import FormValidation from '../scripts/FormValidation.js';
-import Card from '../scripts/Card.js';
+import FormValidation from './FormValidation.js';
+import Card from './Card.js';
 
 // import Toggle from "../scripts/Utils.js";
 console.log("after imports index");
@@ -154,7 +154,6 @@ const initialCards = [
 ];
 
 initialCards.forEach((data) => {
-  console.log("hi");
   new Card (data, cardTemplateSelector);
   list.append(Card);
 });
