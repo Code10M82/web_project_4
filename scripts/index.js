@@ -1,8 +1,8 @@
 import FormValidation from '../scripts/FormValidation.js';
-import Toggle from "../scripts/Utils.js";
+// import Toggle from "../scripts/Utils.js";
 import Card from '../scripts/Card.js';
 
-
+console.log("after imports index");
  const defaultConfig = {
     formSelector: ".popup__form",
     inputSelector: ".popup__value",
@@ -60,35 +60,35 @@ closeImagePopup.addEventListener('click', () => {
   togglePopup(popupImageModal);
 });
 
-// //esc key event
-// const escKey = 27;
+//esc key event
+const escKey = 27;
 
-// const closeEsc = ({ keyCode }) => {
-//   if (keyCode === escKey) {
-//     const modal = document.querySelector('.popup_open');
-//     togglePopup(modal);
-//   }
-// };
+const closeEsc = ({ keyCode }) => {
+  if (keyCode === escKey) {
+    const modal = document.querySelector('.popup_open');
+    togglePopup(modal);
+  }
+};
 
-// //mouse click event
-// const closeClick = ({ target }) => {
-//   if (target === document.querySelector('.popup_open')) { 
-//     togglePopup(target);
-//   }
-// }
+//mouse click event
+const closeClick = ({ target }) => {
+  if (target === document.querySelector('.popup_open')) { 
+    togglePopup(target);
+  }
+}
 
 
-// //Toggle Function
-// function togglePopup(modal) {
-//   modal.classList.toggle('popup_open');
-//   if (modal.classList.contains('popup_open')) {
-//     modal.addEventListener('click', closeClick);
-//     document.addEventListener('keydown', closeEsc);
-//   } else {
-//     modal.removeEventListener('click', closeClick);
-//     document.removeEventListener('keydown', closeEsc);
-//   }
-// }
+//Toggle Function
+function togglePopup(modal) {
+  modal.classList.toggle('popup_open');
+  if (modal.classList.contains('popup_open')) {
+    modal.addEventListener('click', closeClick);
+    document.addEventListener('keydown', closeEsc);
+  } else {
+    modal.removeEventListener('click', closeClick);
+    document.removeEventListener('keydown', closeEsc);
+  }
+}
 
 
 //Open/Close Edit Profile
@@ -122,8 +122,8 @@ saveEditButton.addEventListener('click', () => {
 });
 
 //create card 
-const inputImage = document.querySelector('.popup__add_image-name');
-const inputTitle = document.querySelector('.popup__add_image-link');
+const inputTitle = document.querySelector('.popup__add_image-name');
+const inputImage = document.querySelector('.popup__add_image-link');
 
 //Gallery Array
 const initialCards = [
@@ -154,8 +154,9 @@ const initialCards = [
 ];
 
 initialCards.forEach((data) => {
-  const cardElement = createCard(data.name, data.link);
-  list.append(cardElement);
+  console.log("hi");
+  new Card (data, cardTemplateSelector);
+  list.append(Card);
 });
 
 // function createCard(title, link) {

@@ -1,57 +1,86 @@
-import Toggle from 'utils.js';
+// import Toggle from './Utils.js';
 
-console.log(Toggle);
+//esc key event
+const escKey = 27;
+
+const closeEsc = ({ keyCode }) => {
+  if (keyCode === escKey) {
+    const modal = document.querySelector('.popup_open');
+    togglePopup(modal);
+  }
+};
+
+//mouse click event
+const closeClick = ({ target }) => {
+  if (target === document.querySelector('.popup_open')) { 
+    togglePopup(target);
+  }
+}
+
+
+//Toggle Function
+function togglePopup(modal) {
+  modal.classList.toggle('popup_open');
+  if (modal.classList.contains('popup_open')) {
+    modal.addEventListener('click', closeClick);
+    document.addEventListener('keydown', closeEsc);
+  } else {
+    modal.removeEventListener('click', closeClick);
+    document.removeEventListener('keydown', closeEsc);
+  }
+}
 
 export default class Card {
   constructor(data, cardTemplateSelector) {
-    this._cardTitle = data.title;
+    this._cardTemplateSelector = cardTemplateSelector;
+    this._cardTitle = data.name;
     this._cardImage = data.link;
-    this._cardTemplate = document.querySelector(cardTemplateSelector).content.querySelector('.places__template');
-  }
-
-  _eventHandlers() {
-    const cardImage = this._card.querySelector('.places__image');
-    const cardLikeButton = this._card.querySelector('.button_like');
-    const cardDeleteButton = this._card.querySelector('.button_delete');
-
-    cardImage.addEventListener('click', () => this._imagePopup(data));
-    cardLikeButton.addEventListener('click', this._likeButton);
-    cardDeleteButton.addEventListener('click', this._delete);
-
+  
   }
 
   _createNewTemplate() {
-    this._card = _cardTemplate.cloneNode(true);
-    this._cardTitle = this._card.querySelector('.places__title');
-
-    this._cardTitle.textContent = _title;
-    this._cardImage.style.backgroundImage = `url(${link})`;
-
-    return this._card;
+    this._cardTemplate = document.querySelector(this._cardTemplateSelector).content.querySelector('.places__template');
   }
 
-  _imagePopup() {
-    this._cardImage.addEventListener('click', () => {
-      const popupImage = popupImageModal.querySelector('.popup__image');
-      const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+  _eventHandlers() {
+    //Like Button
+    this._likeButton = this._card.querySelector('.button_like');
 
-      this._cardImage.setAttribute("alt", title);
-      popupImage.src = this._cardImage;
-      popupImageTitle.textContent = this._cardTitle;
-
-      togglePopup(popupImageModal);
-
-    });
-  }
-
-  _LikeButton() {
-    this._card.addEventListener('click', (evt) => {
+    this._likeButton.addEventListener('click', (evt) => {
       evt.target.classList.toggle('button_like_active');
     });
-  }
-    _delete() {
+    
+    //Delete Button
+    this._delete = this._card.querySelector('.button_delete');
+
+    this._delete.addEventListener('click', () => {
       this._card.remove();
-    }
+    });
+
+    //Image Popup
+    this._cardImage.addEventListener('click', () => {
+      this._popupImage = popupImageModal.querySelector('.popup__image');
+      this._popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+  
+      this._cardImage.setAttribute("alt", name);
+      this._popupImage.src = this._cardImage;
+      this._popupImageTitle.textContent = this._cardTitle;
+        
+      togglePopup(popupImageModal);
+    });
+  }
+  
+  _newCard() {
+    this._card = this._createNewTemplate().cloneNode(true);
+
+    this._cardImage = this._card.querySelector('.places__image');
+    this._cardTitle = this._card.querySelector('.places__title');
+
+    this._cardTitle.textContent = name;
+    this._cardImage.style.backgroundImage = `url(${link})`;
+  
+    return this._card;
+  }
 }
 
 const card = new Card();
