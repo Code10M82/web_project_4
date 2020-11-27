@@ -14,8 +14,6 @@ import Card from './Card.js';
   // const formEdit = document.querySelector('.popup__form popup__form_edit');
   // const formAdd = document.querySelector('.popup__form popup__form_add');
 
- 
-
 
 //Open Buttons
 const editButton = document.querySelector('.button_edit');
@@ -45,8 +43,8 @@ const titleEdit = document.querySelector('.popup__edit-title');
 const nameProfile = document.querySelector('.profile__name');
 const titleProfile = document.querySelector('.profile__title');
 
-//Create Card
-const placesTemplate = document.querySelector('.places__template').content.querySelector('.places__card');
+// //Create Card
+// const placesTemplate = document.querySelector('.places__template').content.querySelector('.places__card');
 const list = document.querySelector('.places');
 
 
@@ -157,8 +155,8 @@ const initialCards = [
 
 
 initialCards.forEach((data) => {
-  // new Card (data, cardTemplateSelector);
-  list.append(new Card(data, placesTemplate));
+  const card = new Card(data, cardSelector);
+  list.prepend(card.newCard());
 });
 
 // function createCard(title, link) {

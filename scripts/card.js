@@ -31,15 +31,17 @@ function togglePopup(modal) {
 }
 
 export default class Card {
-  constructor(data, placesTemplate) {
-    this._placesTemplate = placesTemplate;
+  constructor(data, cardSelector) {
     this._cardTitle = data.name;
     this._cardImage = data.link;
+    this._cardSelector = cardSelector;
+    // this._cardSelector = document.querySelector('.places__template');
   
   }
 
   _createNewTemplate() {
-    this._cardTemplateSelector = document.querySelector(placesTemplate).content.querySelector('.places__template');
+    
+    this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.places__template');
   }
 
   _eventHandlers() {
@@ -70,14 +72,17 @@ export default class Card {
     });
   }
   
-  _newCard() {
+  newCard() {
+    
     this._card = this._createNewTemplate().cloneNode(true);
 
     this._cardImage = this._card.querySelector('.places__image');
     this._cardTitle = this._card.querySelector('.places__title');
 
-    this._cardTitle.textContent = name;
+    this._cardTitle.textContent = this._name;
     this._cardImage.style.backgroundImage = `url(${link})`;
+
+    this._eventHandlers();
   
     return this._card;
   }
