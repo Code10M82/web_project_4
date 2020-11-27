@@ -35,13 +35,15 @@ export default class Card {
     this._cardTitle = data.name;
     this._cardImage = data.link;
     this._cardSelector = cardSelector;
-    // this._cardSelector = document.querySelector('.places__template');
+    // this._cardSelector = '.places__template';
   
   }
 
   _createNewTemplate() {
     
-    this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.places__template');
+    this._cardSelector = document.querySelector(this._cardSelector).content.querySelector('.places__template');
+    this._card = this._createNewTemplate().cloneNode(true);
+    return this._card;
   }
 
   _eventHandlers() {
@@ -74,12 +76,12 @@ export default class Card {
   
   newCard() {
     
-    this._card = this._createNewTemplate().cloneNode(true);
+    this._createNewTemplate();
 
     this._cardImage = this._card.querySelector('.places__image');
     this._cardTitle = this._card.querySelector('.places__title');
 
-    this._cardTitle.textContent = this._name;
+    this._cardTitle.textContent = name;
     this._cardImage.style.backgroundImage = `url(${link})`;
 
     this._eventHandlers();

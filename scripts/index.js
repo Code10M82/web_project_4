@@ -155,7 +155,7 @@ const initialCards = [
 
 
 initialCards.forEach((data) => {
-  const card = new Card(data, cardSelector);
+  const card = new Card(data, '.places__template');
   list.prepend(card.newCard());
 });
 
