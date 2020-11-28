@@ -155,8 +155,13 @@ const initialCards = [
 
 
 initialCards.forEach((data) => {
-  const card = new Card(data, '.places__template');
-  list.prepend(card.newCard());
+  const cardObj = new Card(data, '.places__template', list);
+  list.prepend(cardObj.newCard());
+  /*
+  cardObj._card.addEventListener('click', () => {
+    list.removeChild(card);
+  });
+  */
 });
 
 // function createCard(title, link) {
@@ -175,9 +180,7 @@ initialCards.forEach((data) => {
 //   });
 
 //   //delete
-//   cardDeleteButton.addEventListener('click', () => {
-//     list.removeChild(cardElement);
-//   });
+
 
 //   cardImage.addEventListener('click', () => {
 //     togglePopup(popupImageModal);

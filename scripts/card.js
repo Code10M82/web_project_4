@@ -32,18 +32,18 @@ function togglePopup(modal) {
 
 export default class Card {
   constructor(data, cardSelector) {
-    this._cardTitle = data.name;
-    this._cardImage = data.link;
+    this._cardTitleValue = data.name;
+    this._cardImageLink = data.link;
     this._cardSelector = cardSelector;
+    // this._list = list;
     // this._cardSelector = '.places__template';
   
   }
 
   _createNewTemplate() {
     
-    this._cardSelector = document.querySelector(this._cardSelector).content.querySelector('.places__template');
-    this._card = this._createNewTemplate().cloneNode(true);
-    return this._card;
+    this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.places__card');
+    return this._cardTemplate;
   }
 
   _eventHandlers() {
@@ -57,32 +57,36 @@ export default class Card {
     //Delete Button
     this._delete = this._card.querySelector('.button_delete');
 
-    this._delete.addEventListener('click', () => {
+    this._delete.addEventListener('click', (e) => {
       this._card.remove();
+
     });
 
     //Image Popup
+    
     this._cardImage.addEventListener('click', () => {
-      this._popupImage = popupImageModal.querySelector('.popup__image');
-      this._popupImageTitle = popupImageModal.querySelector('.popup__image-title');
+      this._popupImageModal = document.querySelector('.popup_image-modal');
+      this._popupImage = this._popupImageModal.querySelector('.popup__image');
+      this._popupImageTitle = this._popupImageModal.querySelector('.popup__image-title');
   
-      this._cardImage.setAttribute("alt", name);
-      this._popupImage.src = this._cardImage;
-      this._popupImageTitle.textContent = this._cardTitle;
+      this._cardImage.src = this._popupImage;
+      this._cardTitle.textContent = this._popupImageTitle;
+      this._popupImage.setAttribute("alt", name);
         
-      togglePopup(popupImageModal);
+      togglePopup(this._popupImageModal);
     });
+    
   }
   
   newCard() {
     
-    this._createNewTemplate();
-
+    let template = this._createNewTemplate()
+    this._card = template.cloneNode(true)
     this._cardImage = this._card.querySelector('.places__image');
     this._cardTitle = this._card.querySelector('.places__title');
 
-    this._cardTitle.textContent = name;
-    this._cardImage.style.backgroundImage = `url(${link})`;
+    this._cardTitle.textContent = this._cardTitleValue
+    this._cardImage.style.backgroundImage = `url(${this._cardImageLink})`;
 
     this._eventHandlers();
   
