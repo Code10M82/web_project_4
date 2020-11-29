@@ -69,8 +69,8 @@ export default class Card {
       this._popupImage = this._popupImageModal.querySelector('.popup__image');
       this._popupImageTitle = this._popupImageModal.querySelector('.popup__image-title');
   
-      this._cardImage.src = this._popupImage;
-      this._cardTitle.textContent = this._popupImageTitle;
+      this._popupImage.src = this._cardImageLink;
+      this._popupImageTitle.textContent = this._cardTitleValue;
       this._popupImage.setAttribute("alt", name);
         
       togglePopup(this._popupImageModal);
@@ -80,12 +80,12 @@ export default class Card {
   
   newCard() {
     
-    let template = this._createNewTemplate()
+    const template = this._createNewTemplate()
     this._card = template.cloneNode(true)
     this._cardImage = this._card.querySelector('.places__image');
     this._cardTitle = this._card.querySelector('.places__title');
 
-    this._cardTitle.textContent = this._cardTitleValue
+    this._cardTitle.textContent = this._cardTitleValue;
     this._cardImage.style.backgroundImage = `url(${this._cardImageLink})`;
 
     this._eventHandlers();

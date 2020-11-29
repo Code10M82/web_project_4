@@ -121,8 +121,8 @@ saveEditButton.addEventListener('click', () => {
 });
 
 //create card 
-const inputTitle = document.querySelector('.popup__add_image-name');
-const inputImage = document.querySelector('.popup__add_image-link');
+// const inputTitle = document.querySelector('.popup__add_image-name');
+// const inputImage = document.querySelector('.popup__add_image-link');
 
 //Gallery Array
 const initialCards = [
@@ -157,11 +157,6 @@ const initialCards = [
 initialCards.forEach((data) => {
   const cardObj = new Card(data, '.places__template', list);
   list.prepend(cardObj.newCard());
-  /*
-  cardObj._card.addEventListener('click', () => {
-    list.removeChild(card);
-  });
-  */
 });
 
 // function createCard(title, link) {
@@ -194,9 +189,9 @@ initialCards.forEach((data) => {
 //   return cardElement;
 // }
 
-// formAdd.addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   const cardElement = createCard(inputImage.value, inputTitle.value);
-//   list.prepend(cardElement);
-//   togglePopup(popupAddCard);
-// });
+formAdd.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const cardAdd = new Card(data, '.places__template', list);
+  list.prepend(cardAdd.newCard());
+  togglePopup(popupAddCard);
+});
