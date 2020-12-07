@@ -1,6 +1,7 @@
 import FormValidation from './FormValidation.js';
 import Card from './Card.js';
 import initialCards from './InitialCards.js';
+import togglePopup from './Utils.js';
 
 const defaultConfig = {
   formSelector: ".popup__form",
@@ -19,9 +20,6 @@ const addButton = document.querySelector('.button_add');
 const closeEditButton = document.querySelector('.button_close_edit');
 const closeAddButton = document.querySelector('.button_close_add');
 const closeImagePopup = document.querySelector('.button_close_image');
-
-//Edit Save Button
-// const saveEditButton = document.querySelector('.button_save_edit');
 
 //Modals
 const popupEdit = document.querySelector('.popup_edit-profile');
@@ -52,37 +50,6 @@ const addFormValidator = new FormValidation(defaultConfig, formAdd);
 
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
-
-//esc key event
-const escKey = 27;
-
-const closeEsc = ({ keyCode }) => {
-  if (keyCode === escKey) {
-    const modal = document.querySelector('.popup_open');
-    togglePopup(modal);
-  }
-};
-
-//mouse click event
-const closeClick = ({ target }) => {
-  if (target === document.querySelector('.popup_open')) { 
-    togglePopup(target);
-  }
-}
-
-
-//Toggle Function
-function togglePopup(modal) {
-  modal.classList.toggle('popup_open');
-  if (modal.classList.contains('popup_open')) {
-    modal.addEventListener('click', closeClick);
-    document.addEventListener('keydown', closeEsc);
-  } else {
-    modal.removeEventListener('click', closeClick);
-    document.removeEventListener('keydown', closeEsc);
-  }
-}
-
 
 //Open/Close Edit Profile
 editButton.addEventListener('click', () => {

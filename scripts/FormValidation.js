@@ -8,7 +8,6 @@ export default class FormValidation {
   }
 
   _showErrorMessage(input) {
-
     const error = this._form.querySelector('#' + input.id + '-error');
     error.textContent = input.validationMessage;
   
@@ -17,7 +16,6 @@ export default class FormValidation {
   }
 
   _hideErrorMessage(input) {
-
     const error = this._form.querySelector('#' + input.id + '-error');
     error.textContent = '';
 
@@ -26,11 +24,11 @@ export default class FormValidation {
   }
 
   _checkInputValidity(input) {
-      if(input.validity.valid) {
-        this._hideErrorMessage(input, this._form);
-      } else {
-        this._showErrorMessage(input, this._form);
-      }
+    if(input.validity.valid) {
+      this._hideErrorMessage(input, this._form);
+    } else {
+      this._showErrorMessage(input, this._form);
+    }
   }
  
   _toggleButtonState(inputs, button) {

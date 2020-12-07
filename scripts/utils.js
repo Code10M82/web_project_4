@@ -17,7 +17,7 @@ const closeClick = ({ target }) => {
 
 
 //Toggle Function
-function togglePopup(modal) {
+export default function togglePopup(modal) {
   modal.classList.toggle('popup_open');
   if (modal.classList.contains('popup_open')) {
     modal.addEventListener('click', closeClick);

@@ -1,13 +1,10 @@
-
+import togglePopup from './Utils.js';
 
 export default class Card {
   constructor(data, cardSelector) {
     this._cardTitleValue = data.name;
     this._cardImageLink = data.link;
     this._cardSelector = cardSelector;
-    // this._list = list;
-    // this._cardSelector = '.places__template';
-  
   }
 
   _createNewTemplate() {
@@ -33,7 +30,6 @@ export default class Card {
     });
 
     //Image Popup
-    
     this._cardImage.addEventListener('click', () => {
       this._popupImageModal = document.querySelector('.popup_image-modal');
       this._popupImage = this._popupImageModal.querySelector('.popup__image');
@@ -49,7 +45,6 @@ export default class Card {
   }
   
   newCard() {
-    
     const template = this._createNewTemplate()
     this._card = template.cloneNode(true)
     this._cardImage = this._card.querySelector('.places__image');
@@ -63,5 +58,3 @@ export default class Card {
     return this._card;
   }
 }
-
-// const card = new Card();
