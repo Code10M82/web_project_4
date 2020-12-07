@@ -6,6 +6,7 @@ export default class FormValidation {
     this._errorClass = settings.errorClass;
     this._form = formElement;
   }
+
   _showErrorMessage(input) {
 
     const error = this._form.querySelector('#' + input.id + '-error');
@@ -17,7 +18,7 @@ export default class FormValidation {
 
   _hideErrorMessage(input) {
 
-    error = this._form.querySelector('#' + input.id + '-error');
+    const error = this._form.querySelector('#' + input.id + '-error');
     error.textContent = '';
 
     error.classList.remove(this._errorClass);
@@ -26,31 +27,30 @@ export default class FormValidation {
 
   _checkInputValidity(input) {
       if(input.validity.valid) {
-        _hideErrorMessage(input, this._form);
+        this._hideErrorMessage(input, this._form);
       } else {
-        _showErrorMessage(input, this._form);
+        this._showErrorMessage(input, this._form);
       }
   }
  
   _toggleButtonState(inputs, button) {
-      const isValid = inputs.every((input) => input.validity.valid);
-      
-      if(isValid) {
-        button.classList.remove(this._inactiveButtonClass);
-      } else {
-        button.classList.add(this._inactiveButtonClass);
-      }
-    }
+    const isValid = inputs.every((input) => input.validity.valid);
   
+    if(isValid) {
+      button.classList.remove(this._inactiveButtonClass);
+  } else {
+      button.classList.add(this._inactiveButtonClass);
+  }
+}
 
   _setEventListeners() {
     const inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
-    // const button = this._form.querySelector(this._submitButtonSelector);
-  
+    const button = this._form.querySelector(this._subtmitButtonSelector);
+
     inputs.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input);
-        this._toggleButtonState(input, this._subtmitButtonSelector);
+        this._toggleButtonState(inputs, button);
       });
    });
   }
@@ -64,17 +64,4 @@ export default class FormValidation {
   }
 }
 
-//  const defaultConfig = {
-//     formSelector: ".popup__form",
-//     inputSelector: ".popup__value",
-//     submitButtonSelector: ".button_save",
-//     inactiveButtonClass: "popup__button_disabled",
-//     inputErrorClass: "popup__input_type_error",
-//     errorClass: "popup__error_visible"
-//   };
-
-// const editForm = document.querySelector('.popup__form popup__form_edit');
-// const editAddCard = document.querySelector('.popup__form popup__form_add');
-
-// const formValidator = new FormValidation(defaultConfig, editForm, editAddCard);
 
