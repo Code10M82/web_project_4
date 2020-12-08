@@ -36,9 +36,7 @@ const titleEdit = document.querySelector('.popup__edit-title');
 const nameProfile = document.querySelector('.profile__name');
 const titleProfile = document.querySelector('.profile__title');
 
-
 const list = document.querySelector('.places');
-
 
 //close Image Popup
 closeImagePopup.addEventListener('click', () => {
@@ -68,7 +66,6 @@ closeAddButton.addEventListener('click', () => {
   togglePopup(popupAddCard);
 });
 
-
 //Edit Profile Form
 formEdit.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -86,7 +83,6 @@ initialCards.forEach((data) => {
   const cardObj = new Card(data, '.places__template', list);
   list.prepend(cardObj.newCard());
 });
-
 
 formAdd.addEventListener('submit', (event) => {
   event.preventDefault();

@@ -1,4 +1,7 @@
 import togglePopup from './Utils.js';
+const popupImageModal = document.querySelector('.popup_image-modal');
+const popupImage = popupImageModal.querySelector('.popup__image');
+const popupImageTitle = popupImageModal.querySelector('.popup__image-title');
 
 export default class Card {
   constructor(data, cardSelector) {
@@ -8,47 +11,40 @@ export default class Card {
   }
 
   _createNewTemplate() {
-    
-    this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.places__card');
-    return this._cardTemplate;
+    return this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.places__card');
   }
 
+  _like(evt) {
+    evt.target.classList.toggle('button_like_active');
+  }
+
+  _delete(evt) {
+    evt.target.closest('.places__card').remove();
+  }
+
+  _imageModal() {
+    popupImage.setAttribute('src', this._cardImageLink);
+    popupImage.setAttribute('alt', this._cardTitleValue);
+    popupImageTitle.textContent = this._cardTitleValue;
+  }
+
+  _imagePopup() {
+    this._imageModal();
+    togglePopup(popupImageModal);
+  }
   _eventHandlers() {
-    //Like Button
-    this._likeButton = this._card.querySelector('.button_like');
-
-    this._likeButton.addEventListener('click', (evt) => {
-      evt.target.classList.toggle('button_like_active');
-    });
-    
-    //Delete Button
-    this._delete = this._card.querySelector('.button_delete');
-
-    this._delete.addEventListener('click', (e) => {
-      this._card.remove();
-
-    });
-
-    //Image Popup
-    this._cardImage.addEventListener('click', () => {
-      this._popupImageModal = document.querySelector('.popup_image-modal');
-      this._popupImage = this._popupImageModal.querySelector('.popup__image');
-      this._popupImageTitle = this._popupImageModal.querySelector('.popup__image-title');
-  
-      this._popupImage.src = this._cardImageLink;
-      this._popupImageTitle.textContent = this._cardTitleValue;
-      this._popupImage.setAttribute("alt", name);
-        
-      togglePopup(this._popupImageModal);
-    });
-    
+    this._likeButton.addEventListener('click', this._like);
+    this._deleteButton.addEventListener('click', this._delete);
+    this._cardImage.addEventListener('click', this._imagePopup.bind(this));
   }
   
   newCard() {
-    const template = this._createNewTemplate()
+    const template = this._createNewTemplate();
     this._card = template.cloneNode(true)
     this._cardImage = this._card.querySelector('.places__image');
     this._cardTitle = this._card.querySelector('.places__title');
+    this._likeButton = this._card.querySelector('.button_like');
+    this._deleteButton = this._card.querySelector('.button_delete');
 
     this._cardTitle.textContent = this._cardTitleValue;
     this._cardImage.style.backgroundImage = `url(${this._cardImageLink})`;
