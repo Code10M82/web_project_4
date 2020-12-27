@@ -3,37 +3,47 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
-module.exports = {
+module.exports = (env) => ({
   entry: { main: "./src/pages/index.js" },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js"
+    filename: "main.js",
+    publicPath: env.production ? "/web_project_4/" : "/"
   },
   module: {
     rules: [
-      {    
+      {
         test: /\.js$/,
-        loader: "babel-loader",
+        use: "babel-loader",
         exclude: "/node_modules/"
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.(woff2|woff)$/,
+        use: 'file-loader?name=./vendor/[name].[ext]'
+      },
+      {
         test: /\.css$/,
-        use:  [ 
-                MiniCssExtractPlugin.loader,
-                {
-                  loader: 'css-loader',
-                  options: { importLoaders: 1 }
-                },
-                'postcss-loader'
-            ]
-    },
-      {  
-        test: /\.(png|svg|jpg|gif|woff|woff2)$/,
-        loader: "file-loader"
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },
+          'postcss-loader'
+        ]
       },
       {
         test: /\.html$/,
-        loader: "html-loader",
+        use: "html-loader",
       },
     ]
   },
@@ -43,4 +53,4 @@ module.exports = {
     }),
     new MiniCssExtractPlugin()
   ]
-}
+})
