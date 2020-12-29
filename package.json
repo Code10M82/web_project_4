@@ -4,7 +4,8 @@
   "description": "Class Project",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist; webpack --env development",
+     "dev": "webpack serve --open --watch",
+    "build": "webpack --env development",
     "build:prod": "rm -rf dist; webpack --env production",
     "predeploy": "npm run build:prod"
   },
